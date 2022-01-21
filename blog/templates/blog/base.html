@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- Aqui configuramos o padrão base das páginas que iremos criar dinamicamente com DTL -->
+
+<head>
+    <!-- Um bloco em DTL é aberto com block + nome e fechado com endblock -->
+    <!-- Todos os blocos apresentam a sintaxe \{\% \%\} -->
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+</head>
+
+<body>
+    <header>
+        <h1> Tutorial Django: Blog </h1>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+
+</html>

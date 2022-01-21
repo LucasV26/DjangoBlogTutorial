@@ -1,0 +1,17 @@
+<!-- Para poder utilizar o modelo criato anteriormente, utilizamos o bloco extends referenciando o arquivo -->
+{% extends "blog/base.html" %}
+
+{% block title %} Django's Blog 🐍 {% endblock %}
+
+<!-- Além de criar blocos nomeados de conteúdo, possível também executar funções como o loop for -->
+<!-- Variável post_list foi criada pelo Generic ListView do Django, que utilizamos para criar nossa View -->
+<!-- Esta vaeiável contém uma lista com todos os posts e seus campos -->
+{% block content %}
+{% for post in post_list %}
+<div class="card">
+    <h3><a href="{{post.getDetailPath}}"> {{post.title}} </a></h3>
+    <small> Publicado em {{post.created}} por {{post.author}} </small>
+    <p>{{post.body|linebreaks|truncatewords:10}}</p>
+</div>
+{% endfor %}
+{% endblock %}

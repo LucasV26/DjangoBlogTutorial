@@ -1,0 +1,42 @@
+header h1 {
+    text-align: center;
+    text-shadow: white 1px 1px 1px;
+    border-bottom: solid;
+    padding-bottom: 30px;
+    max-width: 500px;
+    margin: 50px auto 10px auto;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    flex: 1 1 300px;
+    background: black;
+    color: white;
+    text-align: center;
+    margin: 50px;
+}
+
+.card a {
+    transition: 0.7s;
+    color: rgb(94, 94, 231);
+}
+
+.card a:hover {
+    font-size: larger;
+}
+
+.card p {
+    font-size: larger;
+    font-weight: bolder;
+}
+
+#post {
+    text-align: center;
+    font-size: larger;
+}
