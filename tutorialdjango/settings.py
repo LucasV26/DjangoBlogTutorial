@@ -32,13 +32,17 @@ ALLOWED_HOSTS = []
 # Para que um app seja reconhecido pelo Django, sua instância em apps.py deve ser referenciada na lista a seguir
 
 INSTALLED_APPS = [
+    # Django apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog.apps.BlogConfig'
+
+    # My apps
+    'blog.apps.BlogConfig',
+    'users.apps.UsersConfig'
 ]
 
 MIDDLEWARE = [
@@ -123,3 +127,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Com a linha abaixo, indicamos que nosso modelo User equivale à classe padrão de usuários para o Django
+AUTH_USER_MODEL = 'users.User'
