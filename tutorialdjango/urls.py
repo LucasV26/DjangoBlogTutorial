@@ -17,7 +17,11 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+    # admin
     path('admin/', admin.site.urls),
-    # Utilizamos o include() pois as configurações de rota do nosso App se encontra em seu próprio arquivo urls.py
+    # all auth
+    path('accounts/', include("allauth.urls")),
+    # my apps
     path('blog/', include("blog.urls", namespace="blog")),
+    path('', include("pages.urls", namespace="pages"))
 ]
