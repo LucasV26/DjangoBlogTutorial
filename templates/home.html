@@ -3,5 +3,8 @@
 {% block title %} Blog Python 🐍 {% endblock %}
 
 {% block content %}
-Salve!
+<div id="disconnected-message">
+    <h1> Você está deslogado! </h1><br><br>
+    <h2> <span> <a href="{% url 'account_login' %}"> Efetue login </a> </span> ou <span> <a href="{% url 'account_signup' %}"> cadastre-se </a> </span> para ter acesso aos posts do blog. </h2>
+</div>
 {% endblock %}

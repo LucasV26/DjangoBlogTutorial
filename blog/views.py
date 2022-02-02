@@ -1,5 +1,8 @@
+from django.shortcuts import render
+from django.http import HttpResponseRedirect
 from django.views.generic import ListView, DetailView
 from .models import Post
+from .forms import PostForm
 
 # Aqui utilizamos views genéricas para agilizar a criação das nossas views básicas de listagem e detalhamento
 # As views genéricas se baseiam no modelo MVT, ou seja, elas naturalmente irão requisitar um template HTML para retornar seus valores
@@ -13,3 +16,16 @@ class ListPostView(ListView):
 
 class DetailPostView(DetailView):
     model = Post
+
+def CreatePostView(request):
+    if request.method == "POST":
+        newPostForm = PostForm(request.POST)
+        if newPostForm.is_valid():
+            newPost = newPostForm.save()
+            if newPost:
+                return HttpResponseRedirect('/blog')
+    else:
+        newPostForm = PostForm()
+
+    return render(request, "post_form.html", {"form": newPostForm})
+

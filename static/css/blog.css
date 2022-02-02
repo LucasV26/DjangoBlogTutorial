@@ -1,3 +1,7 @@
+body {
+    background-color: rebeccapurple;
+}
+
 header h1 {
     text-align: center;
     text-shadow: white 1px 1px 1px;
@@ -17,7 +21,6 @@ main {
 .card {
     flex: 1 1 300px;
     background: black;
-    color: white;
     text-align: center;
     margin: 50px;
 }
@@ -39,4 +42,8 @@ main {
 #post {
     text-align: center;
     font-size: larger;
+}
+
+#disconnected-message {
+    text-align: center;
 }

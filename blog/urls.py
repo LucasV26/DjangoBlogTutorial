@@ -14,5 +14,6 @@ app_name = "blog"
 
 urlpatterns = [
     path("", views.ListPostView.as_view(), name="list"),
-    path("<slug:slug>/", views.DetailPostView.as_view(), name="detail"),
+    path("post/", views.CreatePostView, name="post"),
+    path("<slug:slug>/", views.DetailPostView.as_view(), name="detail")
 ]
