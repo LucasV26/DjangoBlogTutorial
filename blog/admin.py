@@ -1,4 +1,3 @@
-from distutils.errors import PreprocessError
 from django.contrib import admin
 from .models import Post
 
