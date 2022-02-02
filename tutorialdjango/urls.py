@@ -23,5 +23,5 @@ urlpatterns = [
     path('accounts/', include("allauth.urls")),
     # my apps
     path('blog/', include("blog.urls", namespace="blog")),
-    path('', include("pages.urls", namespace="pages"))
+    path('', include("users.urls", namespace="users"))
 ]
